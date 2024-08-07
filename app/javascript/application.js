@@ -3,3 +3,8 @@ import "@hotwired/turbo-rails"
 import "controllers"
 import * as jquery from "jquery"
 import "semantic-ui" 
+
+
+$(document).on('turbo:load', function() {
+    $('.ui.dropdown').dropdown();
+})
