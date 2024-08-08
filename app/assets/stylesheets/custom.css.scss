@@ -12,6 +12,15 @@
     /* Add this CSS to your stylesheet */
 
 .text-align-center {
-    text-align: center; /* Center-align the text */
-  }
-  
+        text-align: center; /* Center-align the text */
+    }
+
+#messages{
+    height: 15em;
+    overflow:auto
+}
+.input {
+button {
+    display: none
+}
+}
