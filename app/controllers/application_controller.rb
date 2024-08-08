@@ -11,8 +11,8 @@ helper_method :current_user , :logged_in?
   end
 
   def require_user
-    if !logged_in
-      flash[:notice] = "You have to be Logged in to perform that task"
+    if !logged_in?
+      flash[:error] = "You have to be Logged in to perform that task"
       redirect_to login_path
     end
   end

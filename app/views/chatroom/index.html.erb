@@ -4,28 +4,25 @@
 </h2>
 
 <div class="ui two column grid">
-    
     <div class="twelve wide column">
     <div class="ui fluid raised card chatbox">
         <div class="content">
             <div class="ui small feed">
-                <h4 class="ui header">{Group Name or 2nd Person Name}</h4>
                 <%= render @messages %>
             </div>
         </div>
         <div class="extra content">
-            <form class="ui reply form">
+            <%= form_for(@message, html: {class: "ui reply form", role: "form"}, url: message_path, remote: true) do |f| %>
                 <div class="field">
                     <div class="ui fluid icon shadow input">
-                        <input type="text" placeholder="Enter a message...">
-                        <i class="bordered inverted orange icon send rounded-icon"></i>
+                    <%= f.text_field :body %>
+                        <%= f.button '<i class="bordered inverted orange icon send rounded-icon"></i>'.html_safe %>
                     </div>
                 </div>
-            </form>
+                <% end %>
         </div>
     </div>
     </div>
-
     <div class="four wide column">
         <div class="ui fluid raised card chatbox">
             <div class="content">
